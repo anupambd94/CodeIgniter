@@ -9,11 +9,11 @@
       <div class="form-group">
         <label for="email">Username</label>
 
-        <?php echo form_input(['class'=>'form-control','placeholder'=>'Enter username','id'=>'username','type'=>'text']); ?>
+        <?php echo form_input(['class'=>'form-control','name'=>'uname','placeholder'=>'Enter username','id'=>'username','type'=>'text']); ?>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <?php echo form_password(['class'=>'form-control','placeholder'=>'Enter password','id'=>'password']); ?>
+        <?php echo form_password(['class'=>'form-control','name'=>'pass','placeholder'=>'Enter password','id'=>'password']); ?>
 
       </div>
 
