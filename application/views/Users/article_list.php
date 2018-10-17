@@ -2,11 +2,12 @@
 <html>
 <head>
 <title>Page Title</title>
+<link href="http://localhost/CodeIgniter/Assets/css/bootstrap.min.css">
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h1>Md. Anupam Hayat Shawon</h1>
+<p>This is the article list page.</p>
 
 </body>
 </html>
