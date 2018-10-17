@@ -1,7 +1,7 @@
 <?php
 class Users extends MY_Controller{
 public function index(){
-  echo "User Index";
+  $this->load->view('Users/article_list');
 }
 
 }
