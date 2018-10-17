@@ -19,8 +19,7 @@
               </div>
 
             </div>
-            <div class="col-lg-6">
-              <label type="hidden"></label><br>
+            <div class="col-lg-6" style="margin-top:35px;">
               <?php echo form_error('uname',"<div class='text-danger'>","</div>");?>
             </div>
           </div>
@@ -33,8 +32,7 @@
               </div>
 
             </div>
-            <div class="col-lg-6">
-              <label type="hidden"></label><br>
+            <div class="col-lg-6" style="margin-top:35px;">
               <?php echo form_error('pass',"<div class='text-danger'>","</div>");?>
             </div>
 
