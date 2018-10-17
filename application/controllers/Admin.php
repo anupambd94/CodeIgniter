@@ -1,7 +1,9 @@
 <?php
-class Admin extends My_Controller{
+class Admin extends MY_Controller{
+  public function index(){
+    echo "Admin Index";
+  }
 
-  
 }
 
  ?>
