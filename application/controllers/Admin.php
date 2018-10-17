@@ -2,10 +2,17 @@
 class Admin extends MY_Controller{
   public function index(){
     $query = $this->db->get('users');
-    $this->form_validation->set_rules('uname','User Name','required|is_unique[users.username]|alpha_numeric');
+    $this->form_validation->set_rules('uname','User Name','required|alpha');
     $this->form_validation->set_rules('pass','Password','required|max_length[12]|min_length[6]');
     if($this->form_validation->run()){
-      echo "validation Successfull";
+      $uname=$this->input->post('uname');
+      $pass=$this->input->post('pass');
+      $this->load->model('AdminLoginModel');
+      if($this->AdminLoginModel->isvalidate($uname,$pass)){
+        //logics correct
+      }else{
+        //Logic faild
+      }
     }else{
       $this->load->view('Admin/login');
       //echo validation_errors();
