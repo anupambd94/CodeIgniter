@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Page Title</title>
-<link href="http://localhost/CodeIgniter/Assets/css/bootstrap.min.css">
+<link href="<?php base_url("Assets/css/bootstrap.min.css")?>" rel="stylesheet">
 </head>
 <body>
 
