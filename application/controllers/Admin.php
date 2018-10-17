@@ -7,7 +7,8 @@ class Admin extends MY_Controller{
     if($this->form_validation->run()){
       echo "validation Successfull";
     }else{
-      echo validation_errors();
+      $this->load->view('Users/article_list');
+      //echo validation_errors();
     }
   }
 
