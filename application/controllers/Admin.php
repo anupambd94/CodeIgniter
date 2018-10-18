@@ -10,16 +10,24 @@ class Admin extends MY_Controller{
       $this->load->model('AdminLoginModel');
       $user_id = $this->AdminLoginModel->isvalidate($uname,$pass);
       if($user_id){
-        $this->load->view('Admin/dashboard');
+        $this->session->set_userdata('id',$user_id);
+        return redirect('Admin/welcome');
       }else{
-        $this->load->view('Admin/login');
-        echo "Login not successfull";
+        return redirect('Admin/signin');
       }
     }else{
       $this->load->view('Admin/login');
       //echo validation_errors();
     }
   }
+
+  public function welcome(){
+    $this->load->view('Admin/dashboard');
+  }
+  public function signin(){
+    $this->load->view('Admin/login');
+  }
+
 
 }
 

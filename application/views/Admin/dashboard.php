@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?php include('header.php');?>
 
-<h1>Dashboard</h1>
-<p>Welcome to dashboard.</p>
+<div class="container" style="margin-top:20px;">
+  <h1>Dashboard</h1>
+  <p>Welcome to dashboard.</p>
+</div>
 
-</body>
-</html>
+<?php include('footer.php');?>
