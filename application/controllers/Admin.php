@@ -9,9 +9,10 @@ class Admin extends MY_Controller{
       $pass=$this->input->post('pass');
       $this->load->model('AdminLoginModel');
       if($this->AdminLoginModel->isvalidate($uname,$pass)){
-        //logics correct
+        echo "Login successfull";
       }else{
-        //Logic faild
+        $this->load->view('Admin/login');
+        echo "Login not successfull";
       }
     }else{
       $this->load->view('Admin/login');
