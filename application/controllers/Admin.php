@@ -8,8 +8,9 @@ class Admin extends MY_Controller{
       $uname=$this->input->post('uname');
       $pass=$this->input->post('pass');
       $this->load->model('AdminLoginModel');
-      if($this->AdminLoginModel->isvalidate($uname,$pass)){
-        echo "Login successfull";
+      $user_id = $this->AdminLoginModel->isvalidate($uname,$pass);
+      if($user_id){
+        $this->load->view('Admin/dashboard');
       }else{
         $this->load->view('Admin/login');
         echo "Login not successfull";
