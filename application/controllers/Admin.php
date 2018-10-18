@@ -22,8 +22,11 @@ class Admin extends MY_Controller{
   }
 
   public function welcome(){
-    $this->load->view('Admin/dashboard');
+    $this->load->model('AdminLoginModel','ALM');
+    $articles=$this->ALM->articleList();
+    $this->load->view('Admin/dashboard',['articles'=>$articles]);
   }
+
   public function signin(){
     $this->load->view('Admin/login');
   }
