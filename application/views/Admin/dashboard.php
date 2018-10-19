@@ -1,9 +1,12 @@
-<?php include('header.php');?>
+<?php include('header.php');
+//print_r($user_name);
+?>
 
 <div class="container" style="margin-top:20px;">
   <h1>Dashboard</h1>
   <p>Welcome to dashboard.</p>
   <br><br>
+
   <table class="table tabble-hover table-responsive-sm ">
     <thead>
       <tr>

@@ -1,7 +1,7 @@
 <?php
 class Admin extends MY_Controller{
 
-  public function index(){
+  public function login(){
 
     $this->form_validation->set_rules('uname','User Name','required|alpha');
     $this->form_validation->set_rules('pass','Password','required|max_length[12]|min_length[6]');
@@ -16,6 +16,7 @@ class Admin extends MY_Controller{
         return redirect('Admin/welcome');
       }else{
         $this->load->view('Admin/login');
+        echo "Incorrect username or password";
       }
     }else{
       $this->load->view('Admin/login');
@@ -27,11 +28,26 @@ class Admin extends MY_Controller{
 
         $this->load->model('AdminLoginModel','ALM');
         $articles=$this->ALM->articleList();
-        $this->load->view('Admin/dashboard',['articles'=>$articles]);
+        $id = $this->session->userdata('id');
+        $this->load->model('UserName');
+        $user_name = $this->UserName->GetName();
+        $this->load->view('Admin/dashboard',['articles'=>$articles,'user_name'=>$user_name]);
+
+        if(! $this->session->userdata('id')){
+          return redirect('Admin/login');
+        }
 
   }
 
+  public function __construct(){
+    parent::__construct();
 
+  }
+
+  public function logout(){
+    $this->session->unset_userdata('id');
+    return redirect('Admin/login');
+  }
 
   public function register(){
     $this->load->view('Admin/register');

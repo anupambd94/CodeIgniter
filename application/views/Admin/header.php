@@ -4,6 +4,14 @@
 <title>Article List</title>
 
 <?= link_tag("Assets/css/bootstrap.min.css") ?>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<style>
+  .btn-logout {
+  width: 100%;
+  padding: 3px 20px !important;
+  text-align: left !important;
+}
+</style>
 
 </head>
 <body>
@@ -14,5 +22,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  
+  <?php
+if($this->session->userdata('id')){
+  include('adminMenu.php');
+}
+   ?>
+
 </nav>
